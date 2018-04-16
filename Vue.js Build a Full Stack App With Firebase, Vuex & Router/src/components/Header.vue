@@ -3,17 +3,25 @@
       <nav class="navbar navbar-toggleable-md navbar-expand navbar-light bg-light">
             <a class="navbar-brand" href="/">PIZZA PLANET</a>
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                  <router-link :to="{ name: 'homeLink' }" tag="li">
                     <a class="nav-link"  href="">home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">menu</a>
-                </li>
+                  </router-link>
+                  <router-link :to="{ name: 'menuLink' }" tag="li">
+                    <a class="nav-link"  href="">menu</a>
+                  </router-link>
             </ul>
       </nav>
   </header>
 </template>
 
+<script>
+  export default {
+    data() {
+      return {
+      }
+    }
+  }
+</script>
 
 <style>
     header {
