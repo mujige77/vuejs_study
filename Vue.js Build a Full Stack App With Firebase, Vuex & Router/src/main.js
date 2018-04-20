@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import accountingjs from 'accounting-js'
 
 import App from './App.vue'
 
@@ -8,7 +9,6 @@ import {routes} from "./routes";
 import {store} from "./store/store";
 
 Vue.use(VueRouter)
-
 const router = new VueRouter({
   routes,
   mode: 'history',
@@ -21,6 +21,10 @@ const router = new VueRouter({
       return {x: 0, y: 0}
     }
   }
+})
+
+Vue.filter('currency', (val) => {
+  return accountingjs.formatMoney(val)
 })
 
 // router.beforeEach((to, from, next) => {
